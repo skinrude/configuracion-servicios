@@ -1,0 +1,23 @@
+spring:    
+server:
+  port: 7000
+  
+zuul:
+  routes:
+    serv-vuelos: #Service to create as sample
+      path: /svuelos/** #path that will be intercepted
+      service-id: servicio-vuelos
+      #url: http://localhost:9000
+    serv-hoteles: 
+      path: /shoteles/**
+      service-id: servicio-hoteles
+    serv-reservas: 
+      path: /sreservas/**
+      service-id: servicio-reservas
+  
+eureka:
+  client:
+      service-url:
+        defaultZone: http://localhost:8761/eureka
+        
+      
